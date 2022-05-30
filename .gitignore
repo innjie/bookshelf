@@ -34,3 +34,10 @@ build/
 
 ### properties ###
 /src/main/resources/application.properties
+
+### SQL ###
+/SQL/sql.sql
+
+### react ###
+/front/package.json
+/front/package-lock.json
