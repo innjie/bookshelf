@@ -16,7 +16,7 @@ function App() {
   return (
       <div className="App">
         <header className="App-header">
-          // 기본코드
+            
           <ul>
             {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
           </ul>
