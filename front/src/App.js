@@ -1,10 +1,9 @@
-
 import './App.css';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import footer from "./statics/footer";
 import nav from "./statics/nav";
 import Header from "./statics/Header";
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 
 function App() {
     const [hello, setHello] = useState('')
