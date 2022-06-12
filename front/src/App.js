@@ -1,28 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import footer from "./statics/footer";
+import nav from "./statics/nav";
+import Header from "./statics/Header";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function App() {
-  const [message, setMessage]=useState([]);
-  useEffect(()=>{
-    fetch("/hello")
-        .then((res)=>{
-          return res.json();
-        })
-        .then((data)=>{
-          setMessage(data);
-        });
-  },[]);
-  return (
-      <div className="App">
-        <header className="App-header">
-            
-          <ul>
-            {message.map((v,idx)=><li key={`${idx}-${v}`}>{v}</li>)}
-          </ul>
-        </header>
-      </div>
-  );
+    const [hello, setHello] = useState('')
+
+    useEffect(() => {
+        axios.get(hello)
+            .then(response => setHello(response.data))
+            .catch(error => console.log(error))
+    }, []);
+
+    return (
+        <div>
+            백엔드에서 가져온 데이터입니다 : {hello}
+        </div>
+    );
 }
 
 export default App;
