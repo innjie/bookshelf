@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
@@ -17,7 +18,11 @@ function App() {
     return (
         <div className = "App">
             <Header/>
-            <Nav className = "container"></Nav>
+            <div className="row">
+                <Nav className = "container"></Nav>
+
+            </div>
+
             <footer/>
         </div>
     );
