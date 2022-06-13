@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import footer from "./statics/footer";
-import nav from "./statics/nav";
+import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 
 function App() {
@@ -15,8 +15,10 @@ function App() {
     }, []);
 
     return (
-        <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
+        <div className = "App">
+            <Header/>
+            <Nav className = "container"></Nav>
+            <footer/>
         </div>
     );
 }
