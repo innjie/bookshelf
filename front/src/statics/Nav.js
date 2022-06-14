@@ -7,7 +7,7 @@ class Nav extends Component {
         return (
             <Container fluid>
                 <aside className="App-nav">
-                    <div className="Nav-Content row">
+                    <div className="Nav-Content row col-lg-3">
                         <ul>1. aaa</ul>
                         <ul>2. bbb</ul>
                         <ul>3. ccc</ul>
