@@ -4,5 +4,13 @@
     display: flex;
 }
 .Nav-Content {
+    text-align: center;
     color : #222229
+}
+.section-content {
+    text-align : center;
+    position: center;
+}
+.content-col {
+    width: 50%;
 }
