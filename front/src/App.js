@@ -16,14 +16,9 @@ function App() {
     }, []);
 
     return (
-        <div className = "App">
+        <div className="App">
             <Header/>
-            <div className="container row">
-                <Nav className = "container"></Nav>
-                <footer/>
-
-            </div>
-
+            <Nav/>
             <footer/>
         </div>
     );
