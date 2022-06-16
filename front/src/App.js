@@ -18,8 +18,9 @@ function App() {
     return (
         <div className = "App">
             <Header/>
-            <div className="row">
+            <div className="container row">
                 <Nav className = "container"></Nav>
+                <footer/>
 
             </div>
 

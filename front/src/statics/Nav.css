@@ -1,11 +1,15 @@
 .App-Nav {
-    background-color : #f2eb88;
-    height : 30%;
+    background-color : #222229;
+    height : max-content;
     display: flex;
 }
+.Container{
+    padding-left: 0;
+}
 .Nav-Content {
+    background-color : #222229;
     text-align: center;
-    color : #222229
+    color : #f2eb88
 }
 .section-content {
     text-align : center;

@@ -29,6 +29,8 @@
 }
 .container {
   display : flex;
+  background-color : #222229;
+  margin-left: 0;
 }
 
 @keyframes App-logo-spin {
