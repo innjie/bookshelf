@@ -2,48 +2,36 @@ import React, {Component} from "react";
 import './Nav.css';
 import {Container} from "react-bootstrap";
 
+function Nav() {
+    return (
+        <Container fluid>
+            <aside className="App-nav">
+                <div className="Nav-Content row">
+                    {/*로그인상태*/}
+                    <div className="id-section">
+                        <ul>
+                            aaa님, 환영합니다.
+                        </ul>
 
-class Nav extends Component {
-    render() {
-        return (
-            <Container fluid>
-                <aside className="App-nav">
-                    <div className="Nav-Content row col-lg-3">
-                        {/*로그인상태*/}
-                        <div className="id-section">
-                            <ul>
-                                aaa님, 환영합니다.
-                            </ul>
-                            <ul className="section-content">
-                                <table>
-                                    <colgroup>
-                                        <col className="content-col"/>
-                                        <col className="content-col"/>
-                                    </colgroup>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="/account/update">정보 수정</a>
-                                        </td>
-                                        <td>
-                                            <a href="/account/bookmark">북마크</a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </ul>
 
-                        </div>
-
+                        <ul className="content-section ">
+                            <a href="/account/update" className="col-xs-4">정보 수정</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="/account/bookmark" className="col-xs-4">북마크</a>
+                        </ul>
+                    </div>
+                    <div className="menu-section">
                         {/*리스트*/}
                         <ul><a href="/view/all">전체 보기</a></ul>
-                        <ul>프로필별 보기</ul>
+                        <ul><a href="/view/profile">프로필별 보기</a></ul>
+                    </div>
+                    <div className="banner-section">
                         {/*배너(디스코드)*/}
                     </div>
-                </aside>
-            </Container>
-        );
-    }
+                </div>
+            </aside>
+        </Container>
+    );
 }
 
 export default Nav;

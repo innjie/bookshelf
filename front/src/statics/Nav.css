@@ -1,20 +1,28 @@
-.App-Nav {
-    background-color : #222229;
-    height : max-content;
-    display: flex;
-}
-.Container{
-    padding-left: 0;
-}
+
 .Nav-Content {
-    background-color : #222229;
     text-align: center;
-    color : #f2eb88
+    color : #f2eb88;
+    background-color : #222229;
+    align-content : start;
+    height : 100%;
 }
-.section-content {
-    text-align : center;
-    position: center;
+.id-section {
+    text-align: center;
+    color : #f2eb88;
+    padding:0;
 }
-.content-col {
-    width: 50%;
+.content-section {
+    align-content: center;
+    color : #f2eb88;
+    padding:0;
+}
+.menu-section {
+    text-align: center;
+    color : #f2eb88;
+    padding:0;
+}
+.banner-section {
+    text-align: center;
+    color : #f2eb88;
+    padding:0;
 }

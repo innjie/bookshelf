@@ -1,6 +1,8 @@
 .App-header {
     background-color : #222229;
-    height: 150px;
+    height: 200px;
+    position: relative;
+    padding-bottom: 10px;
 }
 .headerContent {
     color : #f2eb88;
