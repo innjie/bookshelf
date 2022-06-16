@@ -23,15 +23,14 @@ class Nav extends Component {
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <button className="btn-dark" value="hi"></button>
+                                            <a href="/account/update">정보 수정</a>
                                         </td>
                                         <td>
-                                            북마크
+                                            <a href="/account/bookmark">북마크</a>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
-
                             </ul>
 
                         </div>
