@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import footer from "./statics/footer";
+import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 
@@ -18,8 +18,11 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <Nav/>
-            <footer/>
+            <div className="row">
+                <Nav/>
+                    <Footer/>
+            </div>
+
         </div>
     );
 }
