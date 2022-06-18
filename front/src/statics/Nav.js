@@ -10,7 +10,7 @@ function Nav() {
                     {/*로그인상태*/}
                     <div className="id-section">
                         <ul>
-                            aaa님, 환영합니다.
+                            aaa
                         </ul>
 
 
