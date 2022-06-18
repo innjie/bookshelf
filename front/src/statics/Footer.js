@@ -10,6 +10,10 @@ function footer() {
                 <a href={global_var.DISCORD_PROFILE} target="_blank">
                     <img src={global_var.DEVELOPER_IMG} alt="discord" className="developer_img"/>
                 </a>
+                since 2022.06.05 ~
+                <a href={global_var.GITHUB_URL} target="_blank">
+                    프로젝트 링크
+                </a>
             </div>
         </div>
     );
