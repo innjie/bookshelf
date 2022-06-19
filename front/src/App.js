@@ -22,7 +22,6 @@ function App() {
                 <Nav/>
                     <Footer/>
             </div>
-
         </div>
     );
 }
