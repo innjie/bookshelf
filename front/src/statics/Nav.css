@@ -5,11 +5,15 @@
     background-color : #222229;
     align-content : start;
     height : 100%;
+    padding-left : 0;
 }
 .id-section {
     text-align: center;
     color : #f2eb88;
     padding:0;
+}
+ul {
+    padding-left : 0;
 }
 .content-section {
     align-content: center;

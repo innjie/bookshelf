@@ -5,6 +5,13 @@ import axios from 'axios';
 import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
+import Profile from "./pages/Profile";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link, BrowserRouter
+} from 'react-router-dom';
 
 function App() {
     const [hello, setHello] = useState('')
@@ -16,14 +23,26 @@ function App() {
     }, []);
 
     return (
-        <div className="App">
-            <Header/>
-            <div className="row">
-                <Nav/>
+        <BrowserRouter>
+            <div className="App">
+                <Header/>
+                <div className="row">
+                    <Nav/>
+                    <div className="contents">
+                        <Switch>
+                            <Route path="/view/profile">
+                                <Profile/>
+                            </Route>
+                        </Switch>
+                    </div>
                     <Footer/>
+                </div>
+
+
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
+
 
 export default App;
