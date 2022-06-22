@@ -31,18 +31,19 @@ function App() {
                 </header>
 
                 <Nav/>
-                    <div className="contents">
-                        <Switch>
-                            <Route path="/view/profile">
-                                <Profile/>
-                            </Route>
-                            <Route path="/">
-                                <MainHome/>
-                            </Route>
-                        </Switch>
-                    <Footer/>
-                </div>
+                <div className="contents">
+                    <Switch>
+                        <Route path="/view/profile">
+                            <Profile/>
+                        </Route>
+                        <Route path="/">
+                            <MainHome/>
+                            test
+                        </Route>
+                    </Switch>
 
+                </div>
+                <Footer/>
 
             </div>
         </BrowserRouter>

@@ -14,10 +14,6 @@ html, body {
     height: 40vmin;
     pointer-events: none;
 }
-.contents {
-    display : flex;
-    margin-left : 15%;
-}
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
@@ -40,7 +36,12 @@ html, body {
     padding : 0;
     position: absolute;
     height: 100%;
-
+}
+.contents {
+    display: inline-block;
+    margin-top : 10px;
+    margin-left : 41%;
+    text-align: center;
 }
 .App-link {
     color: #61dafb;
