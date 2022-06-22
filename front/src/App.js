@@ -39,6 +39,7 @@ function App() {
                         <Route path="/">
                             <MainHome/>
                             test
+                            {hello}
                         </Route>
                     </Switch>
 
