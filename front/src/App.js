@@ -6,6 +6,7 @@ import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 import Profile from "./pages/Profile";
+import MainHome from "./pages/MainHome";
 import {
     BrowserRouter as Router,
     Switch,
@@ -32,6 +33,9 @@ function App() {
                         <Switch>
                             <Route path="/view/profile">
                                 <Profile/>
+                            </Route>
+                            <Route path="/">
+                                <MainHome/>
                             </Route>
                         </Switch>
                     </div>
