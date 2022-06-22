@@ -7,23 +7,22 @@
 html, body {
     margin : 0;
     padding : 0;
+    width : 100%;
+    height : 100%;
 }
 .App-logo {
     height: 40vmin;
     pointer-events: none;
 }
 .contents {
-    margin-left: 250px;
-    margin-top : 10px;
-    padding : 0;
-
+    display : flex;
+    margin-left : 15%;
 }
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
     }
 }
-
 .App-header {
     background-color: #282c34;
     display: flex;
@@ -35,12 +34,13 @@ html, body {
     height: 40%;
 }
 .App-nav {
-    position: absolute;
     background-color: #222229;
-    height : 100%;
-    padding-bottom : 80px;
-    width : 200px;
-    padding-left : 0;
+    width : 15%;
+    margin : 0;
+    padding : 0;
+    position: absolute;
+    height: 100%;
+
 }
 .App-link {
     color: #61dafb;
