@@ -26,9 +26,11 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <Header/>
-                <div className="row">
-                    <Nav/>
+                <header>
+                    <Header/>
+                </header>
+
+                <Nav/>
                     <div className="contents">
                         <Switch>
                             <Route path="/view/profile">
@@ -38,7 +40,6 @@ function App() {
                                 <MainHome/>
                             </Route>
                         </Switch>
-                    </div>
                     <Footer/>
                 </div>
 
