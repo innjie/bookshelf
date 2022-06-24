@@ -1,10 +1,10 @@
 package com.example.bookshelf.Domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,21 +12,31 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
-@Entity
+@Entity (name="Booktbl")
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
+public class BookDTO {
     @NotNull
     @Id
     @GeneratedValue
+    @Column(name = "idx")
     private long idx;
     @NotNull
-    private String nickname;
+    @Column(name = "title")
+    private String title;
     @NotNull
-    private String id;
+    @Column(name = "author")
+    private String author;
     @NotNull
-    private String password;
-    private Byte img;
+    @Column(name = "contents")
+    private String contents;
+    @Column(name = "score")
+    @NotNull
+    private int score;
+    @Column(name = "updatedate")
+    @NotNull
     private Date updateDate;
-    private int isDelete;
+    @NotNull
+    @Column(name = "isdelete")
+    private boolean isDelete;
 }
