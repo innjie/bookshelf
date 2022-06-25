@@ -1,6 +1,7 @@
 package com.example.bookshelf.Domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,30 +13,37 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
-@Entity (name="Booktbl")
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity (name="Booktbl")
 public class BookDTO {
     @NotNull
     @Id
     @GeneratedValue
     @Column(name = "idx")
     private long idx;
+
     @NotNull
     @Column(name = "title")
     private String title;
+
     @NotNull
     @Column(name = "author")
     private String author;
+
     @NotNull
     @Column(name = "contents")
     private String contents;
+
+    @NotNull
     @Column(name = "score")
-    @NotNull
     private int score;
-    @Column(name = "updatedate")
+
     @NotNull
+    @Column(name = "updatedate")
     private Date updateDate;
+
     @NotNull
     @Column(name = "isdelete")
     private boolean isDelete;
