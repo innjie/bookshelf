@@ -1,8 +1,36 @@
-import React, {Component} from "react";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function Profile() {
+    // const bookList = {
+    //     idx : '',
+    //     title : '',
+    //     author : '',
+    //     contents : '',
+    //     score : '',
+    //     updateDate : '',
+    //     isdelete : ''
+    // };
+    const [bookList, setList] = useState([]);
+    // let array = list.map((value, key) => <li key = {key}>value</li>);
+    useEffect(() => {
+        axios.get("/profile")
+            .then(res => setList(res.data.bookList))
+            .catch(error => console.log(error))
+
+    }, []);
     return (
-      <p> this is profile.js</p>
+        <div>
+            <p> this is profile.js</p>
+            {bookList.map((book, idx) => {
+                return (
+                    <div key={idx}>
+                        this : {book.title}
+                        {book.author}
+                    </div>
+                )
+            })}
+        </div>
     );
 }
 

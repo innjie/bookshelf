@@ -16,20 +16,12 @@ import {
 
 function App() {
     const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        axios.get("/home")
-            .then(response => setHello(response.data))
-            .catch(error => console.log(error))
-    }, []);
-
     return (
         <BrowserRouter>
             <div className="App">
                 <header>
                     <Header/>
                 </header>
-
                 <Nav/>
                 <div className="contents">
                     <Switch>
@@ -38,14 +30,10 @@ function App() {
                         </Route>
                         <Route path="/">
                             <MainHome/>
-                            test
-                            {hello}
                         </Route>
                     </Switch>
-
                 </div>
                 <Footer/>
-
             </div>
         </BrowserRouter>
     );
