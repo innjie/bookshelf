@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-function Profile() {
+function AllBookList() {
     // const bookList = {
     //     idx : '',
     //     title : '',
@@ -14,14 +14,14 @@ function Profile() {
     const [bookList, setList] = useState([]);
     // let array = list.map((value, key) => <li key = {key}>value</li>);
     useEffect(() => {
-        axios.get("/profile")
+        axios.get("/book/list")
             .then(res => setList(res.data.bookList))
             .catch(error => console.log(error))
 
     }, []);
     return (
         <div>
-            <p> this is profile.js</p>
+            <p> this is allbooklist.js</p>
             {bookList.map((book, idx) => {
                 return (
                     <div key={idx}>
@@ -33,4 +33,4 @@ function Profile() {
         </div>
     );
 }
-export default Profile;
+export default AllBookList;

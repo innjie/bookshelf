@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 import Profile from "./pages/Profile";
 import MainHome from "./pages/MainHome";
+import AllBookList from "./pages/AllBookList";
 import {
     BrowserRouter as Router,
     Switch,
@@ -25,6 +25,9 @@ function App() {
                 <Nav/>
                 <div className="contents">
                     <Switch>
+                        <Route path="/view/all">
+                            <AllBookList/>
+                        </Route>
                         <Route path="/view/profile">
                             <Profile/>
                         </Route>
@@ -38,6 +41,4 @@ function App() {
         </BrowserRouter>
     );
 }
-
-
 export default App;
