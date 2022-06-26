@@ -34,4 +34,9 @@ public class BookService {
         BookDTO book = bookRepository.getBookById(idx);
         return book;
     }
+
+    public List<BookDTO> getBookByUser(long userIdx) {
+        List<BookDTO> bookList = bookRepository.getBookListByUser(userIdx);
+        return bookList;
+    }
 }

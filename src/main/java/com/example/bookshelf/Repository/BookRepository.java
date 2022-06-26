@@ -12,4 +12,7 @@ public interface BookRepository extends JpaRepository<BookDTO, Integer> {
 
     @Query(value = "SELECT * FROM Booktbl WHERE idx > :idx", nativeQuery = true)
     BookDTO getBookById(long idx);
+
+    @Query(value = "SELECT * FROM Booktbl WHERE userIdx > :userIdx", nativeQuery = true)
+    List<BookDTO> getBookListByUser(long userIdx);
 }
