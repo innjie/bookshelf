@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class TestController {
@@ -21,17 +24,21 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @GetMapping("/home")
+    @GetMapping("/profile")
     @ResponseBody
-    public String getHome(){
+    public  Map<String, Object> getHome(){
 //        logger.trace("Trace test");
 //        logger.info("INFO test");
 //        logger.warn("WARN test");
 //        logger.error("ERROR test");
 //        logger.debug("DEBUG test");
+//
         List<BookDTO> bookList = new ArrayList<>();
         bookList = testService.getBookList();
         logger.info(String.valueOf(bookList.size()));
-        return "Hello World!";
+        logger.info(bookList.get(0).getContents());
+        Map<String, Object> result = new HashMap<>();
+        result.put("bookList", bookList);
+        return result;
     }
 }
