@@ -5,7 +5,7 @@ import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 import Profile from "./pages/Profile";
-import MainHome from "./pages/MainHome";
+import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/AllBookList";
 import {
     BrowserRouter as Router,

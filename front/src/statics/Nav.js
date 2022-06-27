@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './Nav.css';
+import '../pages/Main/LoginPart'
 import {Container} from "react-bootstrap";
 import {
     BrowserRouter as Router,
@@ -7,11 +8,17 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+import LoginPart from "../pages/Main/LoginPart";
 
 function Nav() {
     return (
         <aside className="App-nav">
             {/*로그인상태*/}
+            <Switch>
+                <Route>
+                    <LoginPart/>
+                </Route>
+            </Switch>
             <div className="id-section">
                 <ul>
                     aaa
@@ -34,5 +41,4 @@ function Nav() {
         </aside>
     );
 }
-
 export default Nav;
