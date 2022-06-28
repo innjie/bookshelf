@@ -1,0 +1,14 @@
+#id  {
+    width : 85%;
+    margin-left : 5%;
+    margin-bottom : 2px;
+}
+#password {
+    width : 85%;
+    margin-left : 5%;
+    margin-bottom : 3px;
+}
+#sub-btn {
+    margin-left : 5%;
+    size: auto;
+}
