@@ -25,14 +25,16 @@ function App() {
                 <Nav/>
                 <div className="contents">
                     <Switch>
-                        <Route path="/view/all">
+                        <Route path="/book/list">
                             <AllBookList/>
                         </Route>
-                        <Route path="/view/profile">
+                        <Route path="/profile/main">
                             <Profile/>
                         </Route>
                         <Route path="/">
                             <MainHome/>
+                        </Route>
+                        <Route path = "/notice/list">
                         </Route>
                     </Switch>
                 </div>

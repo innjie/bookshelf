@@ -32,8 +32,9 @@ function Nav() {
             </div>
             <div className="menu-section">
                 {/*리스트*/}
-                <ul><a href="/view/all">전체 보기</a></ul>
-                <ul><Link to="/view/profile">프로필별 보기</Link></ul>
+                <ul><a href="/book/list">전체 보기</a></ul>
+                <ul><Link to="/profile/main">프로필별 보기</Link></ul>
+                <ul><Link to = "/notice/list"> 공지사항 </Link></ul>
             </div>
             <div className="banner-section">
                 {/*배너(디스코드)*/}
