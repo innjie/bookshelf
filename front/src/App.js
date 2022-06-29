@@ -7,12 +7,15 @@ import Header from "./statics/Header";
 import Profile from "./pages/Profile";
 import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/AllBookList";
+import NoticeMain from "./pages/notice/NoticeMain";
+
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link, BrowserRouter
 } from 'react-router-dom';
+
 
 function App() {
     const [hello, setHello] = useState('')
@@ -31,10 +34,11 @@ function App() {
                         <Route path="/profile/main">
                             <Profile/>
                         </Route>
+                        <Route path = "/notice/list">
+                            <NoticeMain/>
+                        </Route>
                         <Route path="/">
                             <MainHome/>
-                        </Route>
-                        <Route path = "/notice/list">
                         </Route>
                     </Switch>
                 </div>
