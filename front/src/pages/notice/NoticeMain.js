@@ -2,7 +2,11 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function NoticeMain() {
-    const [noticeList, setList] = useState([]);
+    const [noticeList, setList] = useState([{
+        idx: '',
+        title: '',
+        content: ''
+    }]);
     // let array = list.map((value, key) => <li key = {key}>value</li>);
     useEffect(() => {
         axios.get("/notice/list")
@@ -10,18 +14,39 @@ function NoticeMain() {
             .catch(error => console.log(error))
 
     }, []);
+
     return (
         <div>
-            <p> this is NoticeMain.js</p>
-            {noticeList.map((notice, idx) => {
-                return (
-                    <div key={idx}>
-                        {notice.title}
-                        {notice.author}
-                    </div>
-                )
-            })}
+            <div className="noticeList">
+                <table>
+                    <thead>
+                    <th>
+                        번호
+                    </th>
+                    <th>
+                        제목
+                    </th>
+                    </thead>
+                    <tbody>
+                    {noticeList.map((notice, idx) => {
+                        return (
+                            <tr key={notice.idx}>
+                                <td>{notice.idx}</td>
+                                <td>{notice.title}</td>
+                            </tr>
+                        )
+                    })}
+
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 }
+
+function noticeListResult() {
+
+}
+
 export default NoticeMain;
