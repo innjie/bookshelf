@@ -1,0 +1,9 @@
+.noticeList {
+    width : 800px;
+    text-align: center;
+}
+.noticeTable {
+    border-color : #222229;
+    border-style: solid;
+    width : 100%;
+}

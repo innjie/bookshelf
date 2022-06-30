@@ -16,7 +16,7 @@ function footer() {
                     since 2022.06.05 ~
                 </div>
                 <div className="col col-lg-2">
-                    <a href={global_var.GITHUB_URL} target="_blank" title="개발자 디스코드 바로가기">
+                    <a href={global_var.GITHUB_URL} target="_blank" title="Github">
                         프로젝트 링크
                     </a>
                 </div>
