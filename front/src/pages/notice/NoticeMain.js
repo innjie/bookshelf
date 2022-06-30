@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-
+import './NoticeMain.css';
 function NoticeMain() {
     const [noticeList, setList] = useState([{
         idx: '',
@@ -18,14 +18,16 @@ function NoticeMain() {
     return (
         <div>
             <div className="noticeList">
-                <table>
+                <table className="noticeTable">
                     <thead>
-                    <th>
-                        번호
-                    </th>
-                    <th>
-                        제목
-                    </th>
+                    <tr>
+                        <th className="col-lg-2">
+                            번호
+                        </th>
+                        <th className="col-lg-10">
+                            제목
+                        </th>
+                    </tr>
                     </thead>
                     <tbody>
                     {noticeList.map((notice, idx) => {
