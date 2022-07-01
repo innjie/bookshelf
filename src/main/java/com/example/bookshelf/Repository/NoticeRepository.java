@@ -9,4 +9,6 @@ import java.util.List;
 public interface NoticeRepository extends JpaRepository<NoticeDTO, Integer> {
     @Query(value = "SELECT * FROM NoticeTbl", nativeQuery = true)
     List<NoticeDTO> getNoticeList();
+    @Query(value = "SELECT * FROM NoticeTbl WHERE idx = :idx", nativeQuery = true)
+    NoticeDTO getNotice(long idx);
 }
