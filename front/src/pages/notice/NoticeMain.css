@@ -2,8 +2,13 @@
     width : 800px;
     text-align: center;
 }
+th, tr, td {
+    border-style : solid;
+    border-width : thin;
+}
 .noticeTable {
     border-color : #222229;
     border-style: solid;
+    border-width: thin;
     width : 100%;
 }

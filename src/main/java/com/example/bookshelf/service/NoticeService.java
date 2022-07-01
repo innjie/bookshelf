@@ -20,4 +20,8 @@ public class NoticeService {
         List<NoticeDTO> noticeList = noticeRepository.getNoticeList();
         return noticeList;
     }
+    public NoticeDTO getNotice(long idx) {
+        NoticeDTO notice = noticeRepository.getNotice(idx);
+        return notice;
+    }
 }

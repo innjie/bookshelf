@@ -5,7 +5,8 @@ function NoticeMain() {
     const [noticeList, setList] = useState([{
         idx: '',
         title: '',
-        content: ''
+        content: '',
+        updateDate : ''
     }]);
     // let array = list.map((value, key) => <li key = {key}>value</li>);
     useEffect(() => {
@@ -24,8 +25,11 @@ function NoticeMain() {
                         <th className="col-lg-2">
                             번호
                         </th>
-                        <th className="col-lg-10">
+                        <th className="col-lg-8">
                             제목
+                        </th>
+                        <th className="col-lg-2">
+                            작성일자
                         </th>
                     </tr>
                     </thead>
@@ -34,7 +38,8 @@ function NoticeMain() {
                         return (
                             <tr key={notice.idx}>
                                 <td>{notice.idx}</td>
-                                <td>{notice.title}</td>
+                                <td onClick="">{notice.title}</td>
+                                <td>{notice.updateDate.split("T")[0]}</td>
                             </tr>
                         )
                     })}
@@ -47,8 +52,5 @@ function NoticeMain() {
     );
 }
 
-function noticeListResult() {
-
-}
 
 export default NoticeMain;

@@ -25,4 +25,13 @@ public class NoticeController {
         result.put("noticeList", noticeList);
         return result;
     }
+    @GetMapping("/notice/detail")
+    @ResponseBody
+    public Map<String, Object> getNotice(long idx) {
+        Map<String, Object> result = new HashMap<>();
+
+        NoticeDTO notice = noticeService.getNotice(idx);
+        result.put("notice", notice);
+        return result;
+    }
 }
