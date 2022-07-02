@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './NoticeMain.css';
+
 function NoticeMain() {
+
     const [noticeList, setList] = useState([{
         idx: '',
         title: '',
@@ -16,6 +18,14 @@ function NoticeMain() {
 
     }, []);
 
+
+    function noticeDetail(idx) {
+        const result = axios.get("/notice/detail/", {
+            params : {
+                idx : idx
+            }
+        });
+    }
     return (
         <div>
             <div className="noticeList">
@@ -38,7 +48,7 @@ function NoticeMain() {
                         return (
                             <tr key={notice.idx}>
                                 <td>{notice.idx}</td>
-                                <td onClick="">{notice.title}</td>
+                                <td onClick={noticeDetail(notice.idx)}>{notice.title}</td>
                                 <td>{notice.updateDate.split("T")[0]}</td>
                             </tr>
                         )
