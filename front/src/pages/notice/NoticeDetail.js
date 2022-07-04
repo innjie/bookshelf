@@ -6,16 +6,12 @@ import * as QueryString from "qs";
 
 function NoticeDetail({idx}) {
     const location = useLocation();
-    const queryData = QueryString.parse(location.search);
-    console.log(queryData);
-    const params = new URLSearchParams(location.search);
-    console.log(params);
-    const keyword = params.get('idx');
-    console.log("keyword : " + keyword);
+
+    const keyword = getIdx(location);
     const [notice, setNotice] = useState({
         idx : '',
         title : '',
-        content : '',
+        contents : '',
         updateDate : ''
     });
     useEffect(() => {
@@ -26,22 +22,33 @@ function NoticeDetail({idx}) {
         })
             .then(res => setNotice(res.data.notice))
             .catch(error => console.log(error));
-    }, [])
-    function noticeDetail(idx) {
-        const result = axios.get("/notice/detail", {
-            params : {
-                idx : parseInt(queryData)
-            }
-        });
-    }
+    }, []);
+
     return (
         <div className="noticeContent">
-            <p>{notice.title}</p>
+            <div>
+                {notice.title} <br/>
+                {/*조회수*/}
+            </div>
+            <div>
+                <hr/>
+                <textarea readOnly={true} value={notice.contents} >
+                </textarea>
+
+            </div>
+            <input type="button" value = "좋아요" className="thumbsUp btn btn-success btn-sm" />
+            <input type="button" value = "뒤로가기" className="backToPage btn btn-toolbar btn-sm"/>
 
         </div>
 
     );
 }
+function getIdx(location) {
+    var searchString = location.search;
+    const params = new URLSearchParams(searchString);
+    const keyword = params.get('idx');
 
+    return keyword
+}
 
 export default NoticeDetail;

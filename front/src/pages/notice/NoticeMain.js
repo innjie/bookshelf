@@ -41,7 +41,7 @@ function NoticeMain() {
                         return (
                             <tr key={notice.idx}>
                                 <td>{notice.idx}</td>
-                                <td>
+                                <td className="list-title">
                                     <Link to={"/notice/detail?idx=" + `${notice.idx}`}>
                                         {notice.title}
                                     </Link>
