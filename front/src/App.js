@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
+import NoticeDetail from "./pages/notice/NoticeDetail";
 
 import {
     BrowserRouter as Router,
@@ -18,7 +19,6 @@ import {
 
 
 function App() {
-    const [hello, setHello] = useState('')
     return (
         <BrowserRouter>
             <div className="App">
@@ -34,12 +34,16 @@ function App() {
                         <Route path="/profile/main">
                             <Profile/>
                         </Route>
-                        <Route path = "/notice/list">
+                        <Route path="/notice/list">
                             <NoticeMain/>
                         </Route>
+                        <BrowserRouter>
+                            <Route path="/notice/detail" component={NoticeDetail}/>
+                        </BrowserRouter>
                         <Route path="/">
                             <MainHome/>
                         </Route>
+
                     </Switch>
                 </div>
                 <Footer/>
@@ -47,4 +51,5 @@ function App() {
         </BrowserRouter>
     );
 }
+
 export default App;

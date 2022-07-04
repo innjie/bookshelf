@@ -5,6 +5,7 @@ import com.example.bookshelf.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class NoticeController {
     }
     @GetMapping("/notice/detail")
     @ResponseBody
-    public Map<String, Object> getNotice(long idx) {
+    public Map<String, Object> getNotice(@RequestParam long idx) {
         Map<String, Object> result = new HashMap<>();
 
         NoticeDTO notice = noticeService.getNotice(idx);
