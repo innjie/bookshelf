@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './NoticeMain.css';
+import {useSelector, useDispatch} from "react-redux";
 import NoticeDetail from "./NoticeDetail";
-
+import {
+    Link, Switch, Route, BrowserRouter
+} from 'react-router-dom';
 function NoticeMain() {
-    const [isList, setListState] = useState(true);
     const [noticeList, setList] = useState([{
         idx: '',
         title: '',
         content: '',
-        updateDate : ''
+        updateDate: ''
     }]);
     useEffect(() => {
         axios.get("/notice/list")
@@ -17,10 +19,6 @@ function NoticeMain() {
             .catch(error => console.log(error))
 
     }, []);
-    function noticeDetail(idx) {
-        setListState(false);
-
-    }
     return (
         <div>
             <div className="noticeList">
@@ -43,13 +41,11 @@ function NoticeMain() {
                         return (
                             <tr key={notice.idx}>
                                 <td>{notice.idx}</td>
-                                <td onClick={function (e) {
-                                    e.preventDefault();
-                                    setListState(true);
-                                    if(isList) {
-                                        return <NoticeDetail idx={notice.idx}/>
-                                    }
-                                }.bind(this)}>{notice.title}</td>
+                                <td>
+                                    <Link to={"/notice/detail?idx=" + `${notice.idx}`}>
+                                        {notice.title}
+                                    </Link>
+                                </td>
                                 <td>{notice.updateDate.split("T")[0]}</td>
                             </tr>
                         )
@@ -58,7 +54,6 @@ function NoticeMain() {
                     </tbody>
                 </table>
             </div>
-
         </div>
     );
 }
