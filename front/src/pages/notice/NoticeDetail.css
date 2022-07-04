@@ -1,0 +1,13 @@
+.noticeContent {
+    text-align: center;
+    margin-top : 20px;
+    width : 800px;
+}
+textarea {
+    width : 800px;
+    resize: none;
+    height : 200px;
+}
+.thumbsUp {
+    float : left;
+}
