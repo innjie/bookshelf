@@ -9,6 +9,7 @@ import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
 import NoticeDetail from "./pages/notice/NoticeDetail";
+import NoticeInsert from "./pages/notice/NoticeInsert";
 
 import {
     BrowserRouter as Router,
@@ -37,9 +38,12 @@ function App() {
                         <Route path="/notice/list">
                             <NoticeMain/>
                         </Route>
-                        <BrowserRouter>
-                            <Route path="/notice/detail" component={NoticeDetail}/>
-                        </BrowserRouter>
+                        <Route path="/notice/detail">
+                            <NoticeDetail/>
+                        </Route>
+                        <Route path="/notice/insert">
+                            <NoticeInsert/>
+                        </Route>
                         <Route path="/">
                             <MainHome/>
                         </Route>
