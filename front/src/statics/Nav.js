@@ -25,16 +25,16 @@ function Nav() {
                 </ul>
 
                 <ul className="content-section ">
-                    <a href="/account/update" className="col-xs-4">정보 수정</a>
+                    <a href="/account/update" className="menu-link col-xs-4">정보 수정</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="/account/bookmark" className="col-xs-4">북마크</a>
+                    <a href="/account/bookmark" className="menu-link col-xs-4">북마크</a>
                 </ul>
             </div>
             <div className="menu-section">
                 {/*리스트*/}
-                <ul><a href="/book/list">전체 보기</a></ul>
-                <ul><Link to="/profile/main">프로필별 보기</Link></ul>
-                <ul><Link to = "/notice/list"> 공지사항 </Link></ul>
+                <ul><a href="/book/list" className="menu-link">전체 보기</a></ul>
+                <ul><Link to="/profile/main" className="menu-link">프로필별 보기</Link></ul>
+                <ul><Link to = "/notice/list" className="menu-link"> 공지사항 </Link></ul>
             </div>
             <div className="banner-section">
                 {/*배너(디스코드)*/}
