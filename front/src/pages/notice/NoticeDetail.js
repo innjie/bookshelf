@@ -2,12 +2,16 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './NoticeDetail.css';
 import {useLocation} from "react-router-dom";
-import * as QueryString from "qs";
+import { useHistory } from 'react-router-dom';
 
-function NoticeDetail({idx}) {
+function NoticeDetail() {
     const location = useLocation();
-
     const keyword = getIdx(location);
+    const history = useHistory();
+
+    const handleHistory = () => {
+        history.goBack();
+    }
     const [notice, setNotice] = useState({
         idx : '',
         title : '',
@@ -37,7 +41,7 @@ function NoticeDetail({idx}) {
 
             </div>
             <input type="button" value = "좋아요" className="thumbsUp btn btn-success btn-sm" />
-            <input type="button" value = "뒤로가기" className="backToPage btn btn-toolbar btn-sm"/>
+            <input type="button" value = "뒤로가기" onClick={handleHistory}  className="backToPage btn btn-toolbar btn-sm"/>
 
         </div>
 
@@ -50,5 +54,4 @@ function getIdx(location) {
 
     return keyword
 }
-
 export default NoticeDetail;
