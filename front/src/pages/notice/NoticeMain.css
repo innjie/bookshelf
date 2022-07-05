@@ -3,9 +3,13 @@
     width : 800px;
     text-align: center;
 }
+table {
+    color : #222229;
+}
 th, tr, td {
     border-style : solid;
     border-width : thin;
+    color : #222229;
 }
 .noticeTable {
     border-color : #222229;
@@ -14,5 +18,11 @@ th, tr, td {
     width : 100%;
 }
 .list-title {
-    color : black;
+    color : #222229;
+}
+
+.title-link {
+    color : #222229;
+    text-decoration: none;
+    link : #222229;
 }

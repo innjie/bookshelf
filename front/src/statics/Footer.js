@@ -16,7 +16,7 @@ function footer() {
                     since 2022.06.05 ~
                 </div>
                 <div className="col col-lg-2">
-                    <a href={global_var.GITHUB_URL} target="_blank" title="Github">
+                    <a href={global_var.GITHUB_URL} target="_blank" title="Github" className="menu-link">
                         프로젝트 링크
                     </a>
                 </div>

@@ -42,7 +42,7 @@ function NoticeMain() {
                             <tr key={notice.idx}>
                                 <td>{notice.idx}</td>
                                 <td className="list-title">
-                                    <Link to={"/notice/detail?idx=" + `${notice.idx}`}>
+                                    <Link to={"/notice/detail?idx=" + `${notice.idx}`} className="title-link">
                                         {notice.title}
                                     </Link>
                                 </td>
