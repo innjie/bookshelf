@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './NoticeMain.css';
-import {useSelector, useDispatch} from "react-redux";
-import NoticeDetail from "./NoticeDetail";
 import {
     Link, Switch, Route, BrowserRouter
 } from 'react-router-dom';
@@ -21,6 +19,7 @@ function NoticeMain() {
     }, []);
     return (
         <div>
+            <input type="button" value="추가하기"  className="btn-input btn-toolbar btn-close-white" onClick={insertNotice}/>
             <div className="noticeList">
                 <table className="noticeTable">
                     <thead>
@@ -58,5 +57,8 @@ function NoticeMain() {
     );
 }
 
+function insertNotice() {
+    window.location.href="/notice/insert";
 
+}
 export default NoticeMain;
