@@ -35,3 +35,6 @@ ul {
     text-decoration: none;
     link : #f2eb88;
 }
+.menu-link:hover, .menu-link:visited, .menu-link:active {
+    color : #f2eb88;
+}

@@ -60,3 +60,8 @@ html, body {
         transform: rotate(360deg);
     }
 }
+a {
+    color : #f2eb88;
+    text-decoration: none;
+    link : #f2eb88;
+}
