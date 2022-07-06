@@ -1,0 +1,16 @@
+.notice-form {
+    text-align: center;
+    margin-top : 20px;
+    width : 800px;
+}
+.insert-title-desc {
+    float : left;
+}
+#insert-title {
+    width : 800px;
+}
+textarea {
+    width : 800px;
+    resize: none;
+    height : 200px;
+}
