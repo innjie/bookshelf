@@ -24,4 +24,7 @@ public class NoticeService {
         NoticeDTO notice = noticeRepository.getNotice(idx);
         return notice;
     }
+    public void insertNotice(NoticeDTO notice) {
+        noticeRepository.insertNotice(notice);
+    }
 }

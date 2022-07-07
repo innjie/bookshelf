@@ -20,14 +20,10 @@ function NoticeInsert() {
     }
     // insert notice
     const insertNotice = () => {
-        const notice = {
-            title: title,
-            contents: contents
-        }
-
-        axios.post("/notice/insert", {
+        axios.post("/notice/insert", null, {
             params: {
-                notice: notice
+                title :title,
+                contents : contents
             }
         }).then(res => alert(res.data.result))
             .catch(error => console.log(error));
