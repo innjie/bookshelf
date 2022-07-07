@@ -5,12 +5,14 @@ import {
     Link, Switch, Route, BrowserRouter
 } from 'react-router-dom';
 function NoticeMain() {
+    // 리스트 객체
     const [noticeList, setList] = useState([{
         idx: '',
         title: '',
         content: '',
         updateDate: ''
     }]);
+    // 백엔드단에서 리스트 객체를 가져오는 부분
     useEffect(() => {
         axios.get("/notice/list")
             .then(res => setList(res.data.noticeList))
@@ -36,6 +38,7 @@ function NoticeMain() {
                     </tr>
                     </thead>
                     <tbody>
+                    {/*클릭 시 상세 페이지로 이동 */}
                     {noticeList.map((notice, idx) => {
                         return (
                             <tr key={notice.idx}>
@@ -49,7 +52,6 @@ function NoticeMain() {
                             </tr>
                         )
                     })}
-
                     </tbody>
                 </table>
             </div>
