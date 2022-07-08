@@ -25,10 +25,6 @@ public class NoticeDTO {
     private long idx;
 
     @NotNull
-    @Column(name = "useridx")
-    private long userIdx;
-
-    @NotNull
     @Column(name = "title")
     private String title;
 
