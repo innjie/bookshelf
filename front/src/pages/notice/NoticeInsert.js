@@ -27,6 +27,8 @@ function NoticeInsert() {
             }
         }).then(res => alert(res.data.result))
             .catch(error => console.log(error));
+
+        window.location.href="/notice/list";
     }
 
     return (
