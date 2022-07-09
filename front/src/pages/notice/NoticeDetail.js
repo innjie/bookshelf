@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './NoticeDetail.css';
+import {getIdx} from '../../js/functions';
 import {useLocation} from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 
@@ -41,17 +42,15 @@ function NoticeDetail() {
 
             </div>
             <input type="button" value = "좋아요" className="thumbsUp btn btn-success btn-sm" />
+            <input type="button" value = "수정하기" onClick = {updateNotice(notice.idx)} className="btn btn-check btn-sm"/>
             <input type="button" value = "뒤로가기" onClick={handleHistory}  className="backToPage btn btn-toolbar btn-sm"/>
 
         </div>
 
     );
 }
-function getIdx(location) {
-    var searchString = location.search;
-    const params = new URLSearchParams(searchString);
-    const keyword = params.get('idx');
 
-    return keyword
+function updateNotice(idx) {
+    window.location.href="/notice/update?idx=" + idx;
 }
 export default NoticeDetail;

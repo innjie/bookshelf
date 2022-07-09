@@ -17,6 +17,7 @@ import {
     Route,
     Link, BrowserRouter
 } from 'react-router-dom';
+import NoticeUpdate from "./pages/notice/NoticeUpdate";
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
                         </Route>
                         <Route path="/notice/insert">
                             <NoticeInsert/>
+                        </Route>
+                        <Route path="/notice/update">
+                            <NoticeUpdate/>
                         </Route>
                         <Route path="/">
                             <MainHome/>
