@@ -27,4 +27,7 @@ public class NoticeService {
     public void insertNotice(NoticeDTO notice) {
         noticeRepository.insertNotice(notice);
     }
+    public void updateNotice(NoticeDTO notice) {
+        noticeRepository.updateNotice(notice);
+    }
 }
