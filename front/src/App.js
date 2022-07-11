@@ -42,11 +42,11 @@ function App() {
                         <Route path="/notice/detail">
                             <NoticeDetail/>
                         </Route>
-                        <Route path="/notice/insert">
-                            <NoticeInsert/>
-                        </Route>
                         <Route path="/notice/update">
                             <NoticeUpdate/>
+                        </Route>
+                        <Route path="/notice/insert">
+                            <NoticeInsert/>
                         </Route>
                         <Route path="/">
                             <MainHome/>
