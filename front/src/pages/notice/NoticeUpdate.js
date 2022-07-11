@@ -47,8 +47,6 @@ function NoticeUpdate() {
                 <textarea className="insert-contents" onChange={handleContents} placeholder="내용을 입력하세요">
                 </textarea>
             </div>
-            <input type="button" value="등록" onClick={updateNotice(keyword)} className="thumbsUp btn btn-success btn-sm"/>
-            <input type="button" value="뒤로가기" onClick={handleHistory} className="backToPage btn btn-toolbar btn-sm"/>
 
         </div>
     );
