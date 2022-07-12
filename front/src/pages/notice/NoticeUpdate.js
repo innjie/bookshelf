@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import {getIdx} from "../../js/functions";
@@ -12,17 +12,23 @@ function NoticeUpdate() {
         history.goBack();
     }
 
+    const [notice, setNotice] = useState({
+        idx: '',
+        title: '',
+        contents: '',
+        updateDate: ''
+    });
     const [title, setTitle] = useState('');
-    const handleTitle = (e) => {
+    const handleTitle = useCallback(e => {
         setTitle(e.target.value);
-    }
+    }, []);
     const [contents, setContents] = useState('');
-    const handleContents = (e) => {
+    const handleContents = useCallback(e => {
         setContents(e.target.value);
-    }
+    }, []);
     // update notice
     const updateNotice = (idx) => {
-        axios.post("/notice/update", null, {
+        axios.put("/notice/update", null, {
             params: {
                 idx : idx,
                 title :title,
@@ -33,20 +39,39 @@ function NoticeUpdate() {
 
         window.location.href="/notice/list";
     }
+    //get object
+    useEffect(() => {
+        axios.get("/notice/detail", {
+            params: {
+                idx: parseInt(keyword)
+            }
+        })
+            .then(res => {
+                setNotice(res.data.notice);
+                console.log(notice);
+                setTitle(notice.title);
+                console.log(title);
+                setContents(notice.contents);
+                console.log(contents);
+            })
+            .catch(error => console.log(error));
+    }, []);
 
     return (
         <div className="notice-form">
             {/*제목*/}
             <div className="insert-title-section">
-                <input type="text" className="insert-title" onChange={handleTitle} placeholder="제목"/>
+                <input type="text" value = {title} className="insert-title" onChange={handleTitle}/>
             </div>
 
             {/*내용*/}
             <div className="insert-contents-section">
                 <hr/>
-                <textarea className="insert-contents" onChange={handleContents} placeholder="내용을 입력하세요">
+                <textarea value = {contents} className="insert-contents" onChange={handleContents} placeholder="내용을 입력하세요">
                 </textarea>
             </div>
+            <input type="button" value="수정하기" onClick={() => updateNotice(keyword)} className="thumbsUp btn btn-success btn-sm"/>
+            <input type="button" value="뒤로가기" onClick={() => handleHistory} className="backToPage btn btn-toolbar btn-sm"/>
 
         </div>
     );

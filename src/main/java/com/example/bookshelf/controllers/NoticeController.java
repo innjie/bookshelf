@@ -58,6 +58,7 @@ public class NoticeController {
     @PutMapping("/notice/update")
     public Map<String, Object> updateNotice(NoticeDTO notice){
         Map<String, Object> resultMap = new HashMap<>();
+        logger.info(notice.toString());
         try {
             noticeService.updateNotice(notice);
         } catch (Exception e) {
