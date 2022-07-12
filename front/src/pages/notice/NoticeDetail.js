@@ -44,7 +44,8 @@ function NoticeDetail() {
             </div>
             <input type="button" value="좋아요" className="thumbsUp btn btn-success btn-sm"/>
 
-            <input type = "button" value="수정하기" onClick={() => updateNotice(notice.idx)}
+            <input type = "button" value="수정하기"
+                   onClick={() => updateNotice(notice.idx)}
                    className="btn btn-sm"/>
             <input type="button" value="뒤로가기" onClick={handleHistory} className="backToPage btn btn-toolbar btn-sm"/>
         </div>
