@@ -34,10 +34,13 @@ function NoticePage() {
     return (
         <div className="noticeContent">
             <if state === 'detail'>
-
+                notice detail
+                <input type = "button" value="수정하기"
+                       onClick={() => setState('update')}
+                       className="btn btn-sm"/>
             </if>
             <div className="update">
-
+                notice page
             </div>
 
 
