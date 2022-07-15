@@ -18,6 +18,7 @@ import {
     Link, BrowserRouter
 } from 'react-router-dom';
 import NoticeUpdate from "./pages/notice/NoticeUpdate";
+import NoticePage from "./pages/notice/NoticePage";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
                             <NoticeMain/>
                         </Route>
                         <Route path="/notice/detail">
-                            <NoticeDetail/>
+                            <NoticePage/>
                         </Route>
                         <Route path="/notice/update">
                             <NoticeUpdate/>
