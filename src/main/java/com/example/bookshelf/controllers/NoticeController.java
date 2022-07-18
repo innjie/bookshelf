@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.rmi.server.ExportException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +21,7 @@ public class NoticeController {
 
     @GetMapping("/notice/list")
     @ResponseBody
+    //pageNo 처리 필요
     public Map<String, Object> getNoticeList() {
         Map<String, Object> result = new HashMap<>();
 

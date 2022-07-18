@@ -7,9 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,6 +38,23 @@ public class BookController {
 
         BookDTO book = bookService.getBook(idx);
         result.put("book", book);
+
+        return result;
+    }
+
+    @PostMapping("/book/insert")
+    @ResponseBody
+    public Map<String, Object> insertBook(BookDTO book) {
+        Map<String, Object> result = new HashMap<>();
+        //insert
+        return result;
+    }
+
+    @PutMapping("/book/update")
+    @ResponseBody
+    public Map<String, Object> updateBook(BookDTO book) {
+        Map<String, Object> result = new HashMap<>();
+        //update
 
         return result;
     }

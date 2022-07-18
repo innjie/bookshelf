@@ -91,7 +91,6 @@ function NoticePage() {
                        className="thumbsUp btn btn-success btn-sm"/>
                 <input type="button" value="뒤로가기" onClick={() => handleHistory}
                        className="backToPage btn btn-toolbar btn-sm"/>
-
             </div>
         )
     }
