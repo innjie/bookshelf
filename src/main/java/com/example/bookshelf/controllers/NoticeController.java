@@ -61,6 +61,7 @@ public class NoticeController {
         logger.info(notice.toString());
         try {
             noticeService.updateNotice(notice);
+            logger.info(noticeService.getNotice(6).toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

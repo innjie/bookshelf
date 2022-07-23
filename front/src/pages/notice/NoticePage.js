@@ -71,6 +71,15 @@ function NoticePage() {
             </div>
         )
     }
+    const updateNoticeProcess = () => {
+        axios.put("/notice/update", null, {
+            params: {
+                idx : notice.idx,
+                title : title,
+                contents : contents
+            }
+        })
+    }
     function updateNotice(notice) {
         return (
             <div className="notice-form">
@@ -87,7 +96,7 @@ function NoticePage() {
                               placeholder="내용을 입력하세요">
                 </textarea>
                 </div>
-                <input type="button" value="수정하기" onClick={() => updateNotice(keyword)}
+                <input type="button" value="수정하기" onClick={() => updateNoticeProcess()}
                        className="thumbsUp btn btn-success btn-sm"/>
                 <input type="button" value="뒤로가기" onClick={() => handleHistory}
                        className="backToPage btn btn-toolbar btn-sm"/>
