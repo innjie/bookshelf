@@ -79,6 +79,8 @@ function NoticePage() {
                 contents : contents
             }
         })
+        alert("수정 완료");
+        window.location.href="/notice/list";
     }
     function updateNotice(notice) {
         return (
