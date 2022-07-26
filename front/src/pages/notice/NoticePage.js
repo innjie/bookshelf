@@ -48,7 +48,17 @@ function NoticePage() {
         return (
             <div className="detail">
                 <div>
-                    {notice.title} <br/>
+                    {notice.title}
+                    <input type="button" value="삭제하기"
+                           onClick={() => {
+                               axios.delete("/notice/delete", null, {
+                                   params: {
+                                       idx : notice.idx
+                                   }
+                               })
+                           }}
+                           className="btn-delete btn btn-danger btn-sm"/>
+                    <br/>
                     {/*조회수*/}
                 </div>
                 <div>
@@ -58,7 +68,6 @@ function NoticePage() {
 
                 </div>
                 <input type="button" value="좋아요" className="thumbsUp btn btn-success btn-sm"/>
-
                 <input type="button" value="수정하기"
                        onClick={() => {
                            setTitle(notice.title);
