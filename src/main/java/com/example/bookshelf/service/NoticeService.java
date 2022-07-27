@@ -30,4 +30,7 @@ public class NoticeService {
     public void updateNotice(NoticeDTO notice) {
         noticeRepository.updateNotice(notice);
     }
+    public void deleteNotice(long idx) {
+        noticeRepository.deleteNotice(idx);
+    }
 }

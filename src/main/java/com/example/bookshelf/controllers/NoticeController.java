@@ -67,5 +67,18 @@ public class NoticeController {
         }
         return resultMap;
     }
+    @ResponseBody
+    @DeleteMapping("/notice/delete")
+    public Map<String, Object> deleteNotice(long idx) {
+        Map<String, Object> resultMap = new HashMap<>();
+        logger.info("idx : " + idx);
+        try{
+            //delete action
+            noticeService.deleteNotice(idx);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultMap;
+    }
 }
 
