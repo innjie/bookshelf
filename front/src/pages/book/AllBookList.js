@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import './booklist.css';
 
 function AllBookList() {
     const [bookList, setList] = useState([]);
@@ -12,7 +13,11 @@ function AllBookList() {
     }, []);
     return (
         <div>
-            <p> this is allbooklist.js</p>
+            <div>
+                <input type="text" className="search-text"/>
+                <input type="button" value = "검색" className="search-button"/>
+                <input type="button" value="추가하기" className="btn-add"/>
+            </div>
             {bookList.map((book, idx) => {
                 return (
                     <div key={idx}>
@@ -24,4 +29,5 @@ function AllBookList() {
         </div>
     );
 }
+
 export default AllBookList;
