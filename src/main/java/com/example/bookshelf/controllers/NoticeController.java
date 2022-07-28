@@ -69,7 +69,7 @@ public class NoticeController {
     }
     @ResponseBody
     @DeleteMapping("/notice/delete")
-    public Map<String, Object> deleteNotice(long idx) {
+    public Map<String, Object> deleteNotice(@RequestParam long idx) {
         Map<String, Object> resultMap = new HashMap<>();
         logger.info("idx : " + idx);
         try{

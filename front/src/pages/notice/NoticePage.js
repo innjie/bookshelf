@@ -50,13 +50,7 @@ function NoticePage() {
                 <div>
                     {notice.title}
                     <input type="button" value="삭제하기"
-                           onClick={() => {
-                               axios.delete("/notice/delete", null, {
-                                   params: {
-                                       idx : notice.idx
-                                   }
-                               })
-                           }}
+                           onClick={deleteNoticeProcess}
                            className="btn-delete btn btn-danger btn-sm"/>
                     <br/>
                     {/*조회수*/}
@@ -89,6 +83,17 @@ function NoticePage() {
             }
         })
         alert("수정 완료");
+        window.location.href="/notice/list";
+    }
+    const deleteNoticeProcess = () => {
+        alert(notice.idx)
+        axios.delete("/notice/delete", {
+            params: {
+                idx : parseInt(notice.idx)
+            }
+        }).then({
+
+        }).catch(error => console.log(error));
         window.location.href="/notice/list";
     }
     function updateNotice(notice) {
