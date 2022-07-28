@@ -23,6 +23,6 @@ public interface NoticeRepository extends JpaRepository<NoticeDTO, Integer> {
     int updateNotice(NoticeDTO notice);
     @Transactional
     @Modifying
-    @Query(value = "DELETE NoticeTbl WHERE idx = :#{#idx}", nativeQuery = true)
+    @Query(value = "DELETE FROM NoticeTbl WHERE idx = :#{#idx}", nativeQuery = true)
     int deleteNotice(long idx);
 }

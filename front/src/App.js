@@ -6,7 +6,7 @@ import Nav from "./statics/Nav";
 import Header from "./statics/Header";
 import Profile from "./pages/Profile";
 import MainHome from "./pages/Main/MainHome";
-import AllBookList from "./pages/AllBookList";
+import AllBookList from "./pages/book/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
 import NoticeDetail from "./pages/notice/NoticeDetail";
 import NoticeInsert from "./pages/notice/NoticeInsert";
