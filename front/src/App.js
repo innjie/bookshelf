@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/book/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
@@ -19,6 +19,7 @@ import {
 } from 'react-router-dom';
 import NoticeUpdate from "./pages/notice/NoticeUpdate";
 import NoticePage from "./pages/notice/NoticePage";
+import ProfileInsert from "./pages/profile/ProfileInsert";
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
                 <Nav/>
                 <div className="contents">
                     <Switch>
+                        <Route path="/profile/insert">
+                            <ProfileInsert/>
+                        </Route>
                         <Route path="/book/list">
                             <AllBookList/>
                         </Route>
