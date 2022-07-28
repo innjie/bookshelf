@@ -19,17 +19,14 @@ function Profile() {
             .catch(error => console.log(error))
 
     }, []);
+    const insertProfileForm = () => {
+        window.location.href = "/profile/insert";
+    }
     return (
         <div>
-            <p> this is profile.js</p>
-            {bookList.map((book, idx) => {
-                return (
-                    <div key={idx}>
-                        {book.title}
-                        {book.author}
-                    </div>
-                )
-            })}
+            <input type="button" className="btn-add" value = "추가하기"
+                   onClick={insertProfileForm}
+            />
         </div>
     );
 }
