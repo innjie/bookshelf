@@ -40,7 +40,6 @@ function NoticeDetail() {
                 <hr/>
                 <textarea readOnly={true} value={notice.contents}>
                 </textarea>
-
             </div>
             <input type="button" value="좋아요" className="thumbsUp btn btn-success btn-sm"/>
 
