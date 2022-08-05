@@ -15,8 +15,8 @@ function AllBookList() {
         <div className="list-contents">
             <div>
                 <input type="text" className="search-text col-lg-5"/> &nbsp;
-                <input type="button" value="검색" className="search-button col-lg-2"/>
-                <input type="button" value="추가하기" className="btn-add col-lg-2"/>
+                <input type="button" value="검색" className="search-button btn btn-success btn-sm col-lg-2"/>
+                <input type="button" value="추가하기" className="btn-add btn btn-info btn-sm col-lg-2"/>
             </div>
             <div className="book-list">
                 <table className="book-table">
