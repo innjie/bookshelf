@@ -20,12 +20,13 @@ public class ProfileController {
     ProfileService profileService;
 
     //insert
-    @PostMapping
+    @PostMapping("/profile/insert")
     @ResponseBody
     public Map<String, Object> insertProfile(UserDTO user) {
         Map<String, Object> result = new HashMap<>();
-        logger.info(user.toString());
+        logger.info("user: " + user.toString());
 
+        result.put("result", "end");
         return result;
     }
 }
