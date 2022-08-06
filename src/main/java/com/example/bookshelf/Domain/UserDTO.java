@@ -16,7 +16,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "usertbl")
+@Entity(name = "Users")
 public class UserDTO {
     @NotNull
     @Id

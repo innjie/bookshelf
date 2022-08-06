@@ -25,15 +25,15 @@ function ProfileInsert() {
         console.log("password: " + password);
         console.log("profileImg : " + profileImg);
 
-        // axios.post("/profile/insert", null, {
-        //     params : {
-        //         nickname : nickname,
-        //         id : id,
-        //         password : password,
-        //         profileImg : profileImg
-        //     }
-        // }).then(res => alert(res.data.result))
-        //     .catch(error => console.log(error));
+        axios.post("/profile/insert", null, {
+            params : {
+                nickname : nickname,
+                id : id,
+                password : password,
+                profileImg : profileImg
+            }
+        }).then(res => alert(res.data.result))
+            .catch(error => console.log(error));
 
         // window.location.href = "/prifle/list";
     }
