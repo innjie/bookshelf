@@ -21,17 +21,20 @@ function ProfileInsert() {
     }
     const [imgBase64, setImgBase64] = useState([]);
 
-    const insertProfile = () => {
+    const insertProfile = (event) => {
+        console.log(event);
+        console.log(event.target.files)
+        setProfileImg(event.target.files);
+        //fd.append("file", event.target.files)
         setImgBase64([]);
-        for (let i = 0; i < profileImg; i++) {
-            if (profileImg[i]) {
+        for(var i=0;i<event.target.files.length;i++){
+            if (event.target.files[i]) {
                 let reader = new FileReader();
-                reader.readAsDataURL(profileImg[i]);
-
+                reader.readAsDataURL(event.target.files[i]); // 1. 파일을 읽어 버퍼에 저장합니다.
+                // 파일 상태 업데이트
                 reader.onloadend = () => {
                     // 2. 읽기가 완료되면 아래코드가 실행됩니다.
                     const base64 = reader.result;
-                    console.log(base64)
                     if (base64) {
                         //  images.push(base64.toString())
                         var base64Sub = base64.toString()
@@ -44,7 +47,6 @@ function ProfileInsert() {
                 }
             }
         }
-
 
         axios.post("/profile/insert", null, {
             params: {
