@@ -8,7 +8,7 @@ import Profile from "./pages/profile/Profile";
 import MainHome from "./pages/Main/MainHome";
 import AllBookList from "./pages/book/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
-import NoticeDetail from "./pages/notice/NoticeDetail";
+// import NoticeDetail from "./pages/notice/NoticeDetail";
 import NoticeInsert from "./pages/notice/NoticeInsert";
 
 import {
@@ -17,7 +17,7 @@ import {
     Route,
     Link, BrowserRouter
 } from 'react-router-dom';
-import NoticeUpdate from "./pages/notice/NoticeUpdate";
+// import NoticeUpdate from "./pages/notice/NoticeUpdate";
 import NoticePage from "./pages/notice/NoticePage";
 import ProfileInsert from "./pages/profile/ProfileInsert";
 
@@ -47,9 +47,9 @@ function App() {
                         <Route path="/notice/detail">
                             <NoticePage/>
                         </Route>
-                        <Route path="/notice/update">
+                        {/* <Route path="/notice/update">
                             <NoticeUpdate/>
-                        </Route>
+                        </Route> */}
                         <Route path="/notice/insert">
                             <NoticeInsert/>
                         </Route>

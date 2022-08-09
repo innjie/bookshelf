@@ -4,7 +4,6 @@ import './NoticeDetail.css';
 import {getIdx} from '../../js/functions';
 import {useLocation} from "react-router-dom";
 import {useHistory} from 'react-router-dom';
-import {Link} from "react-router-dom";
 
 function NoticePage() {
     const location = useLocation();

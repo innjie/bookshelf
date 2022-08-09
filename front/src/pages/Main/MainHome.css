@@ -2,3 +2,9 @@
     width : 200px;
     height : 140px;
 }
+.div-calendar .div-list{
+    display: inline-block;
+}
+.sample-table {
+    width : 800px;
+}
