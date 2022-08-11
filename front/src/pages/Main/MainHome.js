@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import './MainHome.css';
 
 function MainHome() {
     const [value, onChange] = useState(new Date());
@@ -15,8 +16,8 @@ function MainHome() {
                 {/* list  */}
                 <table className="sample-table">
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>asdfasdf</td>
+                        <td>asdfasdfasdfasfd</td>
                     </tr>
                 </table>
             </div>
