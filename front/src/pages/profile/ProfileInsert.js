@@ -17,45 +17,54 @@ function ProfileInsert() {
     }
     const [profileImg, setProfileImg] = useState(null);
     const handleProfileImg = (e) => {
-        setProfileImg(e.target.value);
+        const file = e.target.files[0];
+        setProfileImg(file);
+        console.log("file: " + profileImg);
+        console.log(file);
     }
     const [imgBase64, setImgBase64] = useState([]);
 
-    const insertProfile = (event) => {
-        console.log(event);
-        console.log(event.target.files)
-        setProfileImg(event.target.files);
+    const  insertProfile = (event) => {
+        setProfileImg(profileImg);
         //fd.append("file", event.target.files)
+        console.log("img : " + profileImg);
         setImgBase64([]);
-        for(var i=0;i<event.target.files.length;i++){
-            if (event.target.files[i]) {
+            if (profileImg) {
                 let reader = new FileReader();
-                reader.readAsDataURL(event.target.files[i]); // 1. 파일을 읽어 버퍼에 저장합니다.
+                reader.readAsDataURL(profileImg); // 1. 파일을 읽어 버퍼에 저장합니다.
                 // 파일 상태 업데이트
                 reader.onloadend = () => {
                     // 2. 읽기가 완료되면 아래코드가 실행됩니다.
                     const base64 = reader.result;
+                    
                     if (base64) {
-                        //  images.push(base64.toString())
                         var base64Sub = base64.toString()
 
                         setImgBase64(imgBase64 => [...imgBase64, base64Sub]);
                         //  setImgBase64(newObj);
                         // 파일 base64 상태 업데이트
-                        //  console.log(images)
+                        console.log("reader result: " + base64);
                     }
                 }
-            }
+               
         }
 
-        axios.post("/profile/insert", null, {
-            params: {
-                nickname: nickname,
-                id: id,
-                password: password,
-                profileImg: imgBase64
-            }
-        }).then(res => alert(res.data.result))
+    const formData = new FormData();
+    console.log("post :: " + profileImg);
+    formData.append("nickname", nickname);
+    formData.append("id", id);
+    formData.append("password", password);
+    formData.append("profileImg", profileImg);
+
+    console.log("img data: " + imgBase64);
+
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data"
+      }
+    };
+    axios.post("/profile/insert", formData, config)
+            .then(res => alert(res.data.result))
             .catch(error => console.log(error));
 
         // window.location.href = "/profile/list";
@@ -74,8 +83,8 @@ function ProfileInsert() {
                 <input type="password" onChange={handlePassword} className="insert-contents insert-password"/> <br/>
                 {/*profileImg*/}
                 <p>image</p>
-                <input type="file" onChange={handleProfileImg} multiple="multiple"
-                       className="insert-contents insert-img"/> <br/>
+                <input type="file" onChange={handleProfileImg}
+                       className="insert-contents insert-img" required/> <br/>
             </form>
 
             <div className="btn-insert">
