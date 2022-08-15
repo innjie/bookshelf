@@ -1,5 +1,6 @@
 package com.example.bookshelf.controllers;
 
+import com.example.bookshelf.Domain.ProfileInsertDTO;
 import com.example.bookshelf.Domain.UserDTO;
 import com.example.bookshelf.service.ProfileService;
 import org.slf4j.Logger;
@@ -22,9 +23,9 @@ public class ProfileController {
     //insert
     @PostMapping("/profile/insert")
     @ResponseBody
-    public Map<String, Object> insertProfile(UserDTO user) {
+    public Map<String, Object> insertProfile(ProfileInsertDTO profile) {
         Map<String, Object> result = new HashMap<>();
-        logger.info("user: " + user.toString());
+        logger.info("profile: " + profile.toString());
 
         result.put("result", "end");
         return result;
