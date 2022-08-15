@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.sql.Blob;
 import java.util.Date;
 
 @Data
@@ -36,8 +38,8 @@ public class UserDTO {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "profileimg")
-    private Byte profileImg;
+    @Column(name = "profileImg")
+    private String profileImg;
 
     @Column(name = "updatedate")
     private Date updateDate;
