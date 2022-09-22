@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +27,13 @@ public class ProfileController {
     public Map<String, Object> insertProfile(ProfileInsertDTO profile) {
         Map<String, Object> result = new HashMap<>();
         logger.info("profile: " + profile.toString());
+        try {
+            logger.info(profileService.fileToBlob(profile.getProfileImg()).getBinaryStream().toString());
+            // todo : insert profile
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
         result.put("result", "end");
         return result;
