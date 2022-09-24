@@ -18,7 +18,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Users")
+@Entity(name = "Usertbl")
 public class UserDTO {
     @NotNull
     @Id
@@ -37,9 +37,6 @@ public class UserDTO {
     @NotNull
     @Column(name = "password")
     private String password;
-
-    @Column(name = "profileImg")
-    private String profileImg;
 
     @Column(name = "updatedate")
     private Date updateDate;

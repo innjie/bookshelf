@@ -1,8 +1,8 @@
 package com.example.bookshelf.controllers;
 
-import com.example.bookshelf.Domain.ProfileInsertDTO;
+
 import com.example.bookshelf.Domain.UserDTO;
-import com.example.bookshelf.service.ProfileService;
+import com.example.bookshelf.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,27 +10,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class ProfileController {
+public class UserController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    ProfileService profileService;
+    UserService userService;
 
     //insert
     @PostMapping("/profile/insert")
     @ResponseBody
-    public Map<String, Object> insertProfile(ProfileInsertDTO profile) {
+    public Map<String, Object> insertProfile(UserDTO user) {
         Map<String, Object> result = new HashMap<>();
-        logger.info("profile: " + profile.toString());
+        logger.info("user: " + user.toString());
         try {
-            logger.info(profileService.fileToBlob(profile.getProfileImg()).getBinaryStream().toString());
-            // todo : insert profile
-        } catch (SQLException e) {
+            userService.insertProfile(user);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

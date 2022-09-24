@@ -19,21 +19,13 @@ function ProfileInsert() {
     const handleConfirmPassword = (e)  => {
         setConfirmPassword(e.target.value);
     }
-    const [profileImg, setProfileImg] = useState(null);
-    const handleProfileImg = async (e) => {
-        const file = e.target.files[0];
-        setProfileImg(file);
-    }
 
 
     const insertProfile = async () => {
         const formData = new FormData();
-        console.log("post :: " + profileImg);
         formData.append("nickname", nickname);
         formData.append("id", id);
         formData.append("password", password);
-        formData.append("profileImg", new Blob([JSON.stringify(profileImg)], {type : "application/json"}));
-
         const config = {
             headers: {
                 "Content-type": "multipart/form-data"
@@ -62,10 +54,6 @@ function ProfileInsert() {
                 {/*confirm password*/}
                 <p>confirm password</p>
                 <input type="password" onChange={handleConfirmPassword} className="insert-contents insert-confirmPassword"/>
-                {/*profileImg*/}
-                <p>image</p>
-                <input type="file" onChange={handleProfileImg}
-                       className="insert-contents insert-img" required/> <br/>
             </form>
 
             <div className="btn-insert">
