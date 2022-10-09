@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -26,4 +27,8 @@ public class UserService {
     }
 
 
+    public List<UserDTO> getUserList() {
+        List<UserDTO> users = userRepository.getUserList();
+        return users;
+    }
 }

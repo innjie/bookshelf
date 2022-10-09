@@ -1,21 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {
+    Link
+} from "react-router-dom";
 
 function Profile() {
-    // const bookList = {
-    //     idx : '',
-    //     title : '',
-    //     author : '',
-    //     contents : '',
-    //     score : '',
-    //     updateDate : '',
-    //     isdelete : ''
-    // };
-    const [bookList, setList] = useState([]);
-    // let array = list.map((value, key) => <li key = {key}>value</li>);
+    const [profileList, setList] = useState([{
+        idx: '',
+        nickname : '',
+        id : ''
+    }]);
+
     useEffect(() => {
-        axios.get("/profile")
-            .then(res => setList(res.data.bookList))
+        axios.get("/profile/list")
+            .then(res => setList(res.data.profileList))
             .catch(error => console.log(error))
 
     }, []);
@@ -27,6 +25,21 @@ function Profile() {
             <input type="button" className="btn-add" value = "추가하기"
                    onClick={insertProfileForm}
             />
+            <div className="profiles">
+                {/* click */}
+                {profileList.map((profile, idx) => {
+                    return (
+                        <tr key = {profile.idx}>
+                            <td className="list-profile">
+                                <Link to = {"/profile/detail?idx=" + `${profile.idx}`} className="profile-link">
+                                    {profile.nickname}
+                                </Link>
+
+                            </td>
+                        </tr>
+                    )
+                })}
+            </div>
         </div>
     );
 }
