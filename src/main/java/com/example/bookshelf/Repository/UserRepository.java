@@ -6,10 +6,15 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public interface UserRepository extends JpaRepository<UserDTO, Integer> {
     @Query(value = "INSERT INTO Usertbl (nickname, id, password) " +
             "VALUES (:#{#user.nickname}, :#{#user.id}, :#{#user.password})", nativeQuery = true)
     @Transactional
     @Modifying
     int insertProfile(UserDTO user);
+
+    @Query(value = "SELECT * FROM Usertbl", nativeQuery = true)
+    List<UserDTO> getUserList();
 }
