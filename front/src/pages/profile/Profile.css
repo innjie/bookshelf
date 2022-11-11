@@ -1,3 +1,9 @@
 p {
     padding : 0;
 }
+a {
+    color : black;
+}
+.insertButton {
+    margin-bottom: 40px;
+}
