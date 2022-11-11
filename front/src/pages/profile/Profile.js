@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import './Profile.css';
 import {
     Link
 } from "react-router-dom";
@@ -7,13 +8,13 @@ import {
 function Profile() {
     const [profileList, setList] = useState([{
         idx: '',
-        nickname : '',
-        id : ''
+        nickname: '',
+        id: ''
     }]);
 
     useEffect(() => {
         axios.get("/profile/list")
-            .then(res => setList(res.data.profileList))
+            .then(res => setList(res.data.userList))
             .catch(error => console.log(error))
 
     }, []);
@@ -22,16 +23,19 @@ function Profile() {
     }
     return (
         <div>
-            <input type="button" className="btn-add" value = "추가하기"
-                   onClick={insertProfileForm}
-            />
+            <div className="insertButton">
+                <input type="button" className="btn-add" value="추가하기"
+                       onClick={insertProfileForm}/>
+            </div>
+
+
             <div className="profiles">
                 {/* click */}
                 {profileList.map((profile, idx) => {
                     return (
-                        <tr key = {profile.idx}>
+                        <tr key={profile.idx}>
                             <td className="list-profile">
-                                <Link to = {"/profile/detail?idx=" + `${profile.idx}`} className="profile-link">
+                                <Link to={"/profile/detail?idx=" + `${profile.idx}`} className="profile-link">
                                     {profile.nickname}
                                 </Link>
 
@@ -43,4 +47,5 @@ function Profile() {
         </div>
     );
 }
+
 export default Profile;

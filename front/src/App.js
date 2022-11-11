@@ -4,12 +4,18 @@ import React, {useEffect, useState} from 'react';
 import Footer from "./statics/Footer";
 import Nav from "./statics/Nav";
 import Header from "./statics/Header";
-import Profile from "./pages/profile/Profile";
 import MainHome from "./pages/Main/MainHome";
+
+import Profile from "./pages/profile/Profile";
+import ProfileInsert from "./pages/profile/ProfileInsert";
+
 import AllBookList from "./pages/book/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
-// import NoticeDetail from "./pages/notice/NoticeDetail";
+import NoticePage from "./pages/notice/NoticePage";
 import NoticeInsert from "./pages/notice/NoticeInsert";
+// import NoticeDetail from "./pages/notice/NoticeDetail";
+// import NoticeUpdate from "./pages/notice/NoticeUpdate";
+
 
 import {
     BrowserRouter as Router,
@@ -17,9 +23,8 @@ import {
     Route,
     Link, BrowserRouter
 } from 'react-router-dom';
-// import NoticeUpdate from "./pages/notice/NoticeUpdate";
-import NoticePage from "./pages/notice/NoticePage";
-import ProfileInsert from "./pages/profile/ProfileInsert";
+
+
 
 
 function App() {
