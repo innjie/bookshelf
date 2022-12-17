@@ -31,4 +31,9 @@ public class UserService {
         List<UserDTO> users = userRepository.getUserList();
         return users;
     }
+
+    public UserDTO getUser(long idx) {
+        UserDTO user = userRepository.getUser(idx);
+        return user;
+    }
 }
