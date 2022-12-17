@@ -8,6 +8,7 @@ import MainHome from "./pages/Main/MainHome";
 
 import Profile from "./pages/profile/Profile";
 import ProfileInsert from "./pages/profile/ProfileInsert";
+import ProfileDetail from "./pages/profile/ProfileDetail";
 
 import AllBookList from "./pages/book/AllBookList";
 import NoticeMain from "./pages/notice/NoticeMain";
@@ -27,6 +28,7 @@ import {
 
 
 
+
 function App() {
     return (
         <BrowserRouter>
@@ -39,6 +41,9 @@ function App() {
                     <Switch>
                         <Route path="/profile/insert">
                             <ProfileInsert/>
+                        </Route>
+                        <Route path="/profile/detail">
+                            <ProfileDetail/>
                         </Route>
                         <Route path="/book/list">
                             <AllBookList/>

@@ -17,4 +17,7 @@ public interface UserRepository extends JpaRepository<UserDTO, Integer> {
 
     @Query(value = "SELECT * FROM Usertbl", nativeQuery = true)
     List<UserDTO> getUserList();
+
+    @Query(value = "SELECT * FROM Usertbl WHERE idx = :#{#idx}", nativeQuery = true)
+    UserDTO getUser(long idx);
 }
