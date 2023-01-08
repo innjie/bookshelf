@@ -42,6 +42,9 @@ function ProfileInsert() {
     return (
         <div className="insert-form">
             <form>
+                {/* profile img */}
+                <p> 사진 </p>
+                <input type = "file" className="insert-contents insert-img"/>
                 {/*nickname*/}
                 <p>nickname</p>
                 <input type="text" onChange={handleNickname} className="insert-contents insert-nickname"/> <br/>

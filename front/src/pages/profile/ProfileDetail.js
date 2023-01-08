@@ -32,8 +32,12 @@ function ProfileDetail() {
     //data setting
     return (
         <div className = "profileDetailContent">
-            <div>
-                {profile.nickname}
+            <div className= "profile-space">
+                {profile.nickname} <br/>
+                <Link to = {"/bookmark/detail?userIdx=" + `${profile.idx}` + "&pageNo=1"}>
+                    북마크 이동하기 (클릭)
+                </Link>
+
             </div>
 
 
