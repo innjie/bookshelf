@@ -16,6 +16,8 @@ import NoticePage from "./pages/notice/NoticePage";
 import NoticeInsert from "./pages/notice/NoticeInsert";
 // import NoticeDetail from "./pages/notice/NoticeDetail";
 // import NoticeUpdate from "./pages/notice/NoticeUpdate";
+import BookmarkMain from "./pages/bookmark/BookmarkMain";
+import BookMarkDetail from "./pages/bookmark/BookmarkDetail";
 
 
 import {
@@ -39,18 +41,26 @@ function App() {
                 <Nav/>
                 <div className="contents">
                     <Switch>
+                        {/* profile */}
                         <Route path="/profile/insert">
                             <ProfileInsert/>
                         </Route>
                         <Route path="/profile/detail">
                             <ProfileDetail/>
                         </Route>
-                        <Route path="/book/list">
-                            <AllBookList/>
-                        </Route>
                         <Route path="/profile/main">
                             <Profile/>
                         </Route>
+
+                        {/* bookmark */}
+                        <Route path = "/bookmark/list">
+                            <BookmarkMain/>
+                        </Route>
+                        <Route path = "/bookmark/detail">
+                            <BookMarkDetail/>
+                        </Route>
+
+                        {/* notice */}
                         <Route path="/notice/list">
                             <NoticeMain/>
                         </Route>
@@ -62,6 +72,11 @@ function App() {
                         </Route> */}
                         <Route path="/notice/insert">
                             <NoticeInsert/>
+                        </Route>
+
+                        {/* book */}
+                        <Route path="/book/list">
+                            <AllBookList/>
                         </Route>
                         <Route path="/">
                             <MainHome/>
