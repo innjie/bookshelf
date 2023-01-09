@@ -1,0 +1,31 @@
+.bookmarkList {
+    margin-top : 20px;
+    width : 800px;
+    text-align: center;
+}
+table {
+    color : #222229;
+}
+th, tr, td {
+    border-style : solid;
+    border-width : thin;
+    color : #222229;
+}
+.noticeTable {
+    border-color : #222229;
+    border-style: solid;
+    border-width: thin;
+    width : 100%;
+}
+.list-title {
+    color : #222229;
+}
+
+.title-link {
+    color : #222229;
+    text-decoration: none;
+    link : #222229;
+}
+.btn-input {
+    margin-top : 10px;
+}

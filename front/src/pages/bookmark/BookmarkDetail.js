@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import {getIdx} from "../../js/functions";
 
-function ProfileDetail() {
+function BookmarkDetail() {
     const location = useLocation();
     const keyword = getIdx(location);
     const history = useHistory();
@@ -34,7 +34,7 @@ function ProfileDetail() {
         <div className = "profileDetailContent">
             <div className= "profile-space">
                 {profile.nickname} <br/>
-                <Link to = {"/bookmark/list?userIdx=" + `${profile.idx}` + "&pageNo=1"}>
+                <Link to = {"/bookmark/detail?userIdx=" + `${profile.idx}` + "&pageNo=1"}>
                     북마크 이동하기 (클릭)
                 </Link>
 
@@ -44,4 +44,4 @@ function ProfileDetail() {
         </div>
     )
 }
-export default ProfileDetail;
+export default BookmarkDetail;
