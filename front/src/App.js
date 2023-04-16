@@ -32,6 +32,10 @@ import {
 
 
 function App() {
+    const [isLogin, setIsLogin] = useState(false);
+    function loginCallBack(login) {
+        setIsLogin(login);
+    }
     return (
         <BrowserRouter>
             <div className="App">

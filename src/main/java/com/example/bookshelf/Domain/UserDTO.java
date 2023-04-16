@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Blob;
 import java.util.Date;
@@ -43,4 +40,7 @@ public class UserDTO {
 
     @Column(name = "isdelete")
     private int isDelete;
+
+    @Enumerated(EnumType.STRING)
+    private Authority authority;
 }

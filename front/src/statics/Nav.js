@@ -19,6 +19,7 @@ function Nav() {
                     <LoginPart/>
                 </Route>
             </Switch>
+
             <div className="id-section">
                 <ul>
                     aaa
