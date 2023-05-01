@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState} from "react";
 import './Nav.css';
 import '../pages/Main/LoginPart'
 import {Container} from "react-bootstrap";
@@ -11,13 +11,16 @@ import {
 import LoginPart from "../pages/Main/LoginPart";
 
 function Nav() {
+    const [isLogin, setIsLogin] = useState(false);
+    function loginCallBack(login) {
+        setIsLogin(login);
+    }
     return (
         <aside className="App-nav">
             {/*로그인상태*/}
             <Switch>
-                <Route>
-                    <LoginPart/>
-                </Route>
+                <Route render ={(props) => <LoginPart {...props} loginCallBack = {loginCallBack}/>}/>
+
             </Switch>
 
             <div className="id-section">
