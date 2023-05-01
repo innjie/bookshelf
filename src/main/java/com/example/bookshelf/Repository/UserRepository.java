@@ -17,10 +17,10 @@ public interface UserRepository extends JpaRepository<UserDTO, Integer> {
     @Modifying
     int insertProfile(UserDTO user);
 
-    @Query(value = "SELECT * FROM Usertbl", nativeQuery = true)
+    @Query(value = "SELECT * FROM UserTbl", nativeQuery = true)
     List<UserDTO> getUserList();
 
-    @Query(value = "SELECT * FROM Usertbl WHERE idx = :#{#idx}", nativeQuery = true)
+    @Query(value = "SELECT * FROM UserTbl WHERE idx = :#{#idx}", nativeQuery = true)
     UserDTO getUser(long idx);
 
     @Repository

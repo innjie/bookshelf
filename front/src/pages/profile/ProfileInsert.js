@@ -37,7 +37,7 @@ function ProfileInsert() {
             .then(res => alert(res.data.result))
             .catch(error => console.log(error));
 
-        // window.location.href = "/profile/list";
+        window.location.href = "/profile/main";
     }
     return (
         <div className="insert-form">
