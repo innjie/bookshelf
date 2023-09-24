@@ -15,11 +15,6 @@ import java.util.UUID;
 public class JWTSecurity {
     private static final String SECRET_KEY = "SecretKey";
 
-    public static void main(String[] args) {
-        String token = createJwtToken("id");
-        boolean isValid = validateJwtToken(token);
-    }
-
     public static String createJwtToken(String object) {
         SecretKey secretKey = Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
 
